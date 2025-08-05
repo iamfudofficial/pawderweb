@@ -107,7 +107,7 @@
   text-transform: uppercase;
   z-index: 10004;
   position: relative;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
   touch-action: manipulation;
   pointer-events: auto;
   /* Mobile Touch Optimierung */
@@ -118,12 +118,38 @@
   -webkit-touch-callout: none;
   -webkit-appearance: none;
   appearance: none;
+  /* Zusätzliche Mobile-Optimierungen */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .product-btn-green:hover {
   background: #d0ff46;
   color: #222;
   box-shadow: 0 4px 18px #b7e00099;
 }
+
+/* Mobile-spezifische Button-Optimierungen */
+@media (max-width: 900px) {
+  .product-btn-green {
+    min-height: 44px;
+    min-width: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: rgba(183, 224, 0, 0.3);
+    z-index: 10005 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+  
+  .product-btn-green:active {
+    transform: scale(0.98);
+    background: #a0c700;
+  }
+}
+
 @media (max-width: 900px) {
   .product-showcase-green {
     padding: 40px 20px 32px 20px;
@@ -170,7 +196,8 @@
   .product-btn-green {
     padding: 12px 28px;
     font-size: 1rem;
-    pointer-events: auto;
+    min-height: 44px;
+    z-index: 10005 !important;
   }
   .trustpilot-bar {
     padding: 8px 20px;
@@ -223,7 +250,8 @@
   .product-btn-green {
     padding: 10px 24px;
     font-size: 0.95rem;
-    pointer-events: auto;
+    min-height: 40px;
+    z-index: 10005 !important;
   }
   .trustpilot-bar {
     padding: 7px 16px;
@@ -276,7 +304,8 @@
   .product-btn-green {
     padding: 8px 20px;
     font-size: 0.9rem;
-    pointer-events: auto;
+    min-height: 36px;
+    z-index: 10005 !important;
   }
   .trustpilot-bar {
     padding: 6px 12px;
