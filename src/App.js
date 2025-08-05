@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import HeaderBar from './components/HeaderBar';
 import ProductShowcase from './components/ProductShowcase';
 import FullWidthImage from './components/FullWidthImage';
@@ -32,7 +31,6 @@ function MainContent() {
   return (
     <div className="App">
       <HeaderBar />
-      <Navbar />
       {/* 1. Hero Section */}
       <section className="pawder-hero-banner">
         <div className="pawder-hero-left">
