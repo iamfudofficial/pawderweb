@@ -147,31 +147,10 @@
 
 .navbar-links {
   list-style: none;
-  display: flex;
-  gap: 40px;
+  display: none;
   margin: 0;
   padding: 0;
   align-items: center;
-}
-
-.navbar-links li a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: #222;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background: none;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-
-.navbar-links li a:hover {
-  background: #f0f8ff;
-  color: #2565a6;
-  transform: translateY(-2px);
 }
 
 .navbar-side {
@@ -234,6 +213,7 @@
     width: 280px;
     height: 100vh;
     background: #fff;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -264,6 +244,11 @@
     cursor: pointer;
     z-index: 10002;
     position: relative;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
   }
   
   .navbar-links li a:hover {
