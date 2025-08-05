@@ -81,13 +81,6 @@ const StoryCards = () => {
     }
   }, []);
 
-  const containerStyle = {
-    position: 'relative',
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 20px'
-  };
-
   const listStyle = {
     display: 'flex',
     flexDirection: 'row',
@@ -113,24 +106,6 @@ const StoryCards = () => {
     textDecoration: 'none',
     transition: 'box-shadow 0.18s, transform 0.18s',
     overflow: 'hidden'
-  };
-
-  const arrowStyle = {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    background: 'rgba(255, 255, 255, 0.9)',
-    border: 'none',
-    borderRadius: '50%',
-    width: '50px',
-    height: '50px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-    transition: 'all 0.3s ease',
-    zIndex: 10005
   };
 
   return (
