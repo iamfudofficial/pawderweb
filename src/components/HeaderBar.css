@@ -73,10 +73,6 @@
 }
 
 @media (max-width: 900px) {
-  .headerbar {
-    display: none;
-  }
-  
   .headerbar-logo {
     height: 40px;
     max-width: 100px;

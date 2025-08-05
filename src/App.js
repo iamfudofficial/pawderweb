@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HeaderBar from './components/HeaderBar';
+import Navbar from './components/Navbar';
 import ProductShowcase from './components/ProductShowcase';
 import FullWidthImage from './components/FullWidthImage';
 import BestsellerSection from './components/BestsellerSection';
@@ -30,7 +30,7 @@ import './App.css';
 function MainContent() {
   return (
     <div className="App">
-      <HeaderBar />
+      <Navbar />
       {/* 1. Hero Section */}
       <section className="pawder-hero-banner">
         <div className="pawder-hero-left">
