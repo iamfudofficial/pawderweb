@@ -36,12 +36,7 @@ function MainContent() {
         <div className="pawder-hero-left">
           <div className="pawder-hero-toptext">Shake it. Sprinkle it. Wag it.</div>
           <div className="meatbar-big" style={{margin: 0}}>Pawder – Das Gewürz für glückliche Hunde</div>
-          <button 
-            onClick={() => window.location.href = '/shop'} 
-            className="pawder-hero-btn"
-          >
-            JETZT VORBESTELLEN
-          </button>
+          <a href="#products" className="pawder-hero-btn">JETZT VORBESTELLEN</a>
         </div>
         <div className="pawder-hero-right">
           <div className="pawder-hero-product-image">
@@ -96,12 +91,7 @@ function MainContent() {
       <section className="story-cta-section">
         <div className="story-cta-inner">
           <h2 className="story-cta-title">Mach jede Mahlzeit zum Lieblingsmoment!</h2>
-          <button 
-            onClick={() => window.location.href = '/shop'} 
-            className="pawder-hero-btn"
-          >
-            Jetzt Pawder entdecken
-          </button>
+          <a href="#products" className="pawder-hero-btn">Jetzt Pawder entdecken</a>
         </div>
       </section>
       <Footer />

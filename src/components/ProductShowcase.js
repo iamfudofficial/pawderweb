@@ -40,13 +40,13 @@ const products = [
 const ProductShowcase = () => {
   const navigate = useNavigate();
 
-  const handleDiscover = (e, filter) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleDiscover = (filter) => {
+    console.log('Button clicked, navigating to:', `/shop?filter=${filter}`);
     navigate(`/shop?filter=${filter}`);
   };
 
   const handleProductClick = (productId) => {
+    console.log('Product clicked, navigating to:', `/product/${productId}`);
     navigate(`/product/${productId}`);
   };
 
@@ -66,7 +66,14 @@ const ProductShowcase = () => {
             <button
               className="product-btn-green"
               onClick={(e) => {
-                handleDiscover(e, prod.filter);
+                console.log('Discover button clicked for:', prod.filter);
+                e.stopPropagation();
+                e.preventDefault();
+                handleDiscover(prod.filter);
+              }}
+              onTouchStart={(e) => {
+                console.log('Touch start on button');
+                e.stopPropagation();
               }}
             >
               {prod.button}
