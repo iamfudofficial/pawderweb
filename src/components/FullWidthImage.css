@@ -1,0 +1,44 @@
+.fullwidth-image-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  background: #f8f6f2;
+}
+.fullwidth-image {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .fullwidth-image-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  .fullwidth-image {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .fullwidth-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .fullwidth-image {
+    width: 100%;
+  }
+}

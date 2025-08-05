@@ -1,0 +1,52 @@
+.brandvideo-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #222;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.brandvideo-player {
+  width: 100vw;
+  max-width: 100vw;
+  height: 54vw;
+  max-height: 520px;
+  object-fit: cover;
+  background: #111;
+  border: none;
+  display: block;
+}
+@media (max-width: 900px) {
+  .brandvideo-section {
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+  .brandvideo-player {
+    width: 100%;
+    height: 48vw;
+    max-height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brandvideo-player {
+    height: 56vw;
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 400px) {
+  .brandvideo-player {
+    height: 60vw;
+    max-height: 180px;
+  }
+}

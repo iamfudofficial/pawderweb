@@ -1,0 +1,156 @@
+.headerbar {
+  width: 100%;
+  background: #2565a6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 78px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headerbar-left {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+}
+
+.headerbar-search {
+  background: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  width: 180px;
+  outline: none;
+  box-shadow: 0 2px 8px #e3e3e3;
+  transition: all 0.3s ease;
+}
+
+.headerbar-search:focus {
+  box-shadow: 0 4px 12px rgba(37, 101, 166, 0.2);
+  transform: translateY(-1px);
+}
+
+.headerbar-center {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerbar-logo {
+  height: 62px;
+  max-width: 210px;
+  object-fit: contain;
+  display: block;
+}
+
+.headerbar-right {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.headerbar-flag {
+  width: 32px;
+  height: 22px;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px #193c54;
+}
+
+.headerbar-cart {
+  margin-left: 18px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .headerbar {
+    display: none;
+  }
+  
+  .headerbar-logo {
+    height: 40px;
+    max-width: 100px;
+  }
+  
+  .headerbar-search {
+    width: 120px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 18px;
+  }
+  
+  .headerbar-flag {
+    width: 24px;
+    height: 16px;
+  }
+  
+  .headerbar-cart {
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerbar {
+    padding: 0 12px;
+    height: 48px;
+  }
+  
+  .headerbar-logo {
+    height: 35px;
+    max-width: 80px;
+  }
+  
+  .headerbar-search {
+    width: 100px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 15px;
+  }
+  
+  .headerbar-flag {
+    width: 22px;
+    height: 15px;
+  }
+  
+  .headerbar-cart {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .headerbar {
+    padding: 0 10px;
+    height: 45px;
+  }
+  
+  .headerbar-logo {
+    height: 30px;
+    max-width: 70px;
+  }
+  
+  .headerbar-search {
+    width: 80px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+  
+  .headerbar-flag {
+    width: 20px;
+    height: 14px;
+  }
+  
+  .headerbar-cart {
+    margin-left: 8px;
+  }
+}

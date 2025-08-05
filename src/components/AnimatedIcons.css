@@ -1,0 +1,103 @@
+.animated-icons-section {
+  background: #eaffc2;
+  padding: 24px 0;
+  overflow: hidden;
+  position: relative;
+}
+.animated-icons-container {
+  width: 100%;
+  overflow: hidden;
+}
+.animated-icons-track {
+  display: flex;
+  animation: scroll-left 20s linear infinite;
+  white-space: nowrap;
+}
+.animated-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 48px;
+  flex-shrink: 0;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px #b8ffb8;
+  transition: transform 0.2s;
+}
+.animated-icon-item:hover {
+  transform: scale(1.05);
+}
+.animated-icon {
+  font-size: 1.8rem;
+}
+.animated-icon-text {
+  font-size: 1rem;
+  color: #6f2e9a;
+  font-weight: 700;
+  white-space: nowrap;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 900px) {
+  .animated-icons-section {
+    padding: 20px 0;
+  }
+  .animated-icons-track {
+    animation-duration: 15s;
+  }
+  .animated-icon-item {
+    margin-right: 32px;
+    padding: 10px 16px;
+  }
+  .animated-icon {
+    font-size: 1.5rem;
+  }
+  .animated-icon-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .animated-icons-section {
+    padding: 16px 0;
+  }
+  .animated-icons-track {
+    animation-duration: 12s;
+  }
+  .animated-icon-item {
+    margin-right: 24px;
+    padding: 8px 12px;
+  }
+  .animated-icon {
+    font-size: 1.3rem;
+  }
+  .animated-icon-text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .animated-icons-section {
+    padding: 12px 0;
+  }
+  .animated-icons-track {
+    animation-duration: 10s;
+  }
+  .animated-icon-item {
+    margin-right: 20px;
+    padding: 6px 10px;
+  }
+  .animated-icon {
+    font-size: 1.1rem;
+  }
+  .animated-icon-text {
+    font-size: 0.8rem;
+  }
+} 

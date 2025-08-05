@@ -1,0 +1,258 @@
+.shipping-info-section {
+  background: #fff;
+  padding: 48px 0 32px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.shipping-info-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.shipping-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.shipping-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.shipping-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #8dd10a;
+  margin-bottom: 12px;
+}
+
+.shipping-header p {
+  font-size: 1.15rem;
+  color: #2d3a4a;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.shipping-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.shipping-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #b8ffb8;
+  position: relative;
+  overflow: hidden;
+}
+
+.shipping-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2565a6, #1e40af);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.shipping-card:hover::before {
+  transform: scaleX(1);
+}
+
+.shipping-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #8dd10a;
+}
+
+.shipping-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.shipping-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.shipping-highlight {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6f2e9a;
+  margin-bottom: 10px;
+}
+
+.shipping-card p:last-child {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.shipping-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.shipping-table {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shipping-table h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.shipping-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9ecef;
+  align-items: center;
+}
+
+.shipping-row:last-child {
+  border-bottom: none;
+}
+
+.shipping-amount {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.shipping-cost {
+  font-weight: 700;
+  color: #2565a6;
+  font-size: 1.1rem;
+}
+
+.shipping-service {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.shipping-note {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shipping-note h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.shipping-note ul {
+  list-style: none;
+  padding: 0;
+}
+
+.shipping-note li {
+  padding: 8px 0;
+  color: #6c757d;
+  position: relative;
+  padding-left: 25px;
+}
+
+.shipping-note li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2565a6;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .shipping-info-section {
+    padding: 60px 0;
+  }
+  
+  .shipping-header h2 {
+    font-size: 2rem;
+  }
+  
+  .shipping-header p {
+    font-size: 1rem;
+  }
+  
+  .shipping-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .shipping-card {
+    padding: 30px 20px;
+  }
+  
+  .shipping-details {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .shipping-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .shipping-amount,
+  .shipping-cost,
+  .shipping-service {
+    padding: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .shipping-container {
+    padding: 0 15px;
+  }
+  
+  .shipping-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .shipping-card {
+    padding: 25px 15px;
+  }
+  
+  .shipping-icon {
+    font-size: 2.5rem;
+  }
+  
+  .shipping-table,
+  .shipping-note {
+    padding: 20px;
+  }
+} 
