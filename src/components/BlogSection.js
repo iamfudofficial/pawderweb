@@ -61,6 +61,21 @@ const BlogSection = () => {
       const newScroll = index * cardWidth;
       console.log('Scrolling to index', index, 'at position', newScroll);
       
+      scrollRef.current.scrollTo({
+        left: newScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const listStyle = {
+    display: 'flex',
+    gap: '20px',
+    overflowX: 'auto',
+    scrollBehavior: 'smooth',
+    paddingBottom: '10px'
+  };
+      
   const cardStyle = {
     background: '#fff',
     borderRadius: '18px',
