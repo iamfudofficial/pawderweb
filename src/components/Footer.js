@@ -14,7 +14,7 @@ const Footer = () => (
           <img src="/footer/applepay.svg" alt="Apple Pay" />
         </div>
         <div className="footer-payment-desc">Einfache und sichere Zahlung<br />SSL-Verschlüsselung &amp; Käuferschutz</div>
-        <a className="footer-btn" href="#">MEHR ZUM THEMA</a>
+        <a className="footer-btn" href="javascript:void(0)">MEHR ZUM THEMA</a>
       </div>
       <div className="footer-shipping">
         <div className="footer-payment-title">Europaweite Lieferung</div>
@@ -39,15 +39,15 @@ const Footer = () => (
         <div>
           <div className="footer-link-title">Unternehmen</div>
           <Link to="/about">Über PAWDER</Link>
-          <a href="#">Unsere Werte</a>
-          <a href="#">Nachhaltigkeit</a>
+          <a href="javascript:void(0)">Unsere Werte</a>
+          <a href="javascript:void(0)">Nachhaltigkeit</a>
         </div>
         <div>
           <div className="footer-link-title">Shop</div>
-          <a href="#">Produkte</a>
-          <a href="#">Snacks</a>
-          <a href="#">Trockenfutter</a>
-          <a href="#">Nassfutter</a>
+          <Link to="/shop">Produkte</Link>
+          <a href="javascript:void(0)">Snacks</a>
+          <a href="javascript:void(0)">Trockenfutter</a>
+          <a href="javascript:void(0)">Nassfutter</a>
         </div>
         <div>
           <div className="footer-link-title">Infos</div>
@@ -57,22 +57,22 @@ const Footer = () => (
         </div>
         <div>
           <div className="footer-link-title">Service</div>
-          <a href="#">Newsletter</a>
-          <a href="#">Rücksendungen</a>
-          <a href="#">Händlersuche</a>
+          <a href="javascript:void(0)">Newsletter</a>
+          <a href="javascript:void(0)">Rücksendungen</a>
+          <a href="javascript:void(0)">Händlersuche</a>
         </div>
       </div>
       <div className="footer-social">
-        <a href="#"><img src="/footer/instagram.svg" alt="Instagram" /></a>
-        <a href="#"><img src="/footer/facebook.svg" alt="Facebook" /></a>
-        <a href="#"><img src="/footer/tiktok.svg" alt="TikTok" /></a>
+        <a href="javascript:void(0)"><img src="/footer/instagram.svg" alt="Instagram" /></a>
+        <a href="javascript:void(0)"><img src="/footer/facebook.svg" alt="Facebook" /></a>
+        <a href="javascript:void(0)"><img src="/footer/tiktok.svg" alt="TikTok" /></a>
       </div>
     </div>
     <div className="footer-bottom">
       <span>© 2024 PAWDER GmbH</span>
       <Link to="/impressum">Impressum</Link>
-      <a href="#">AGB</a>
-      <a href="#">Datenschutz</a>
+      <a href="javascript:void(0)">AGB</a>
+      <a href="javascript:void(0)">Datenschutz</a>
     </div>
   </footer>
 );

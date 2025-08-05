@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeaderBar from './components/HeaderBar';
 import ProductShowcase from './components/ProductShowcase';
 import FullWidthImage from './components/FullWidthImage';
