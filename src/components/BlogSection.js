@@ -61,32 +61,6 @@ const BlogSection = () => {
       const newScroll = index * cardWidth;
       console.log('Scrolling to index', index, 'at position', newScroll);
       
-      scrollRef.current.scrollTo({
-        left: newScroll,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  useEffect(() => {
-    const scrollElement = scrollRef.current;
-    if (scrollElement) {
-      scrollElement.addEventListener('scroll', handleScroll);
-      return () => scrollElement.removeEventListener('scroll', handleScroll);
-    }
-  }, []);
-
-  const listStyle = {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: '20px',
-    overflowX: 'scroll',
-    scrollBehavior: 'smooth',
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
-    padding: '20px 0'
-  };
-
   const cardStyle = {
     background: '#fff',
     borderRadius: '18px',
