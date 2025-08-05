@@ -7,16 +7,19 @@ const blogPosts = [
     title: 'Läufigkeit und Kastration',
     image: '/blog/laeufigkeit.jpg',
     link: '/blog/laeufigkeit',
+    excerpt: 'Alles was Sie über die Läufigkeit und Kastration bei Hündinnen wissen sollten.',
   },
   {
     title: 'Wandern mit Hund',
     image: '/blog/wandern.jpg',
     link: '/blog/wandern',
+    excerpt: 'Tipps und Tricks für entspannte Wanderungen mit Ihrem vierbeinigen Begleiter.',
   },
   {
     title: 'Zecken beim Hund',
     image: '/blog/zecken.jpg',
     link: '/blog/zecken',
+    excerpt: 'Wie Sie Ihren Hund vor Zecken schützen und was bei einem Zeckenbiss zu tun ist.',
   },
 ];
 
