@@ -71,6 +71,14 @@ const BlogSection = () => {
     }
   };
 
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+    if (scrollElement) {
+      scrollElement.addEventListener('scroll', handleScroll);
+      return () => scrollElement.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   const listStyle = {
     display: 'flex',
     gap: '20px',

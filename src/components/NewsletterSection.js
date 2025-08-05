@@ -17,7 +17,7 @@ const NewsletterSection = () => (
           <button type="submit" className="newsletter-btn">ANMELDEN</button>
         </form>
         <div className="newsletter-datenschutz">
-          Mit Anmeldung zum PAWDER-Newsletter akzeptierst du unsere <a href="#">Datenschutzhinweise</a>.
+          Mit Anmeldung zum PAWDER-Newsletter akzeptierst du unsere <a href="/impressum">Datenschutzhinweise</a>.
         </div>
       </div>
       <div className="newsletter-img-wrapper">
