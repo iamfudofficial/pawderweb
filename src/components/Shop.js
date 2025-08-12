@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
 import { useSearchParams } from 'react-router-dom';
 import './Shop.css';
 
@@ -48,6 +49,34 @@ const Shop = () => {
   
   const products = selectedType === 'Alle' ? allProducts : allProducts.filter(p => p.type === selectedType);
 
+  const handleCheckout = async (prod) => {
+    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '');
+    const cents = Math.round(parseFloat((prod.price || '0').replace(/[^0-9,\.]/g, '').replace(',', '.')) * 100);
+    const res = await fetch('/.netlify/functions/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        currency: 'EUR',
+        items: [
+          {
+            name: prod.title,
+            unit_amount: cents,
+            quantity: 1,
+            images: [prod.image],
+          },
+        ],
+      }),
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+      return;
+    }
+    if (data.id) {
+      await stripe?.redirectToCheckout({ sessionId: data.id });
+    }
+  };
+
   return (
     <div className="shop-page">
       <aside className="shop-sidebar">
@@ -76,7 +105,7 @@ const Shop = () => {
               <div className="shop-card-title">{prod.title}</div>
               <div className="shop-card-desc">{prod.description}</div>
               <div className="shop-card-price">{prod.price}</div>
-              <button className="shop-card-btn">In den Warenkorb</button>
+              <button className="shop-card-btn" onClick={() => handleCheckout(prod)}>Jetzt kaufen</button>
             </div>
           ))}
         </div>

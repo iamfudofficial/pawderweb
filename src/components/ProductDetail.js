@@ -1,4 +1,5 @@
 import React from 'react';
+import { loadStripe } from '@stripe/stripe-js';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
 
@@ -115,6 +116,34 @@ const ProductDetail = () => {
     );
   }
 
+  const handleCheckout = async () => {
+    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '');
+    const cents = Math.round(parseFloat((product.price || '0').replace(/[^0-9,\.]/g, '').replace(',', '.')) * 100);
+    const res = await fetch('/.netlify/functions/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        currency: 'EUR',
+        items: [
+          {
+            name: product.title,
+            unit_amount: cents,
+            quantity: 1,
+            images: [product.image],
+          },
+        ],
+      }),
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+      return;
+    }
+    if (data.id) {
+      await stripe?.redirectToCheckout({ sessionId: data.id });
+    }
+  };
+
   return (
     <div className="product-detail-page">
       <div className="product-detail-container">
@@ -162,19 +191,9 @@ const ProductDetail = () => {
               <p className="product-detail-size">{product.size}</p>
             </div>
             
-                         <div className="product-detail-actions">
-               <button 
-                 className="add-to-cart-btn"
-                 onClick={() => navigate(`/shop?filter=${product.type}`)}
-               >
-                 In den Warenkorb
-               </button>
-               <button 
-                 className="shop-btn"
-                 onClick={() => navigate('/shop')}
-               >
-                 Zum Shop
-               </button>
+             <div className="product-detail-actions">
+               <button className="add-to-cart-btn" onClick={handleCheckout}>Jetzt kaufen</button>
+               <button className="shop-btn" onClick={() => navigate('/shop')}>Zum Shop</button>
              </div>
              
              <div className="product-detail-external">
