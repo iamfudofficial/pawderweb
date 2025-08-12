@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import { getStripe } from '../stripeConfig';
 import { useSearchParams } from 'react-router-dom';
 import './Shop.css';
 
@@ -50,7 +50,13 @@ const Shop = () => {
   const products = selectedType === 'Alle' ? allProducts : allProducts.filter(p => p.type === selectedType);
 
   const handleCheckout = async (prod) => {
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '');
+    let stripe;
+    try {
+      stripe = await getStripe();
+    } catch (e) {
+      alert(e.message);
+      return;
+    }
     const cents = Math.round(parseFloat((prod.price || '0').replace(/[^0-9,\.]/g, '').replace(',', '.')) * 100);
     const res = await fetch('/.netlify/functions/create-checkout-session', {
       method: 'POST',

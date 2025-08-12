@@ -1,5 +1,5 @@
 import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import { getStripe } from '../stripeConfig';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
 
@@ -117,7 +117,13 @@ const ProductDetail = () => {
   }
 
   const handleCheckout = async () => {
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY || '');
+    let stripe;
+    try {
+      stripe = await getStripe();
+    } catch (e) {
+      alert(e.message);
+      return;
+    }
     const cents = Math.round(parseFloat((product.price || '0').replace(/[^0-9,\.]/g, '').replace(',', '.')) * 100);
     const res = await fetch('/.netlify/functions/create-checkout-session', {
       method: 'POST',
