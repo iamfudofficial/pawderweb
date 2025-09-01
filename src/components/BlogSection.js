@@ -5,17 +5,17 @@ import './BlogSection.css';
 const blogPosts = [
   {
     title: 'Läufigkeit und Kastration',
-    image: '/blog/laeufigkeit.jpg',
+    image: '/blog/mecs-5f994ba93cb7b-1646392.jpg',
     link: '/blog/laeufigkeit',
   },
   {
     title: 'Wandern mit Hund',
-    image: '/blog/wandern.jpg',
+    image: '/blog/wandern-hund-102-resimage_v-variantBig16x9_w-832.avif',
     link: '/blog/wandern',
   },
   {
     title: 'Zecken beim Hund',
-    image: '/blog/zecken.jpg',
+    image: '/blog/Zecken-beim-Hund-Teaser-neu.jpg',
     link: '/blog/zecken',
   },
 ];

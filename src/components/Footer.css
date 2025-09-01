@@ -36,6 +36,12 @@
   height: 32px;
   width: auto;
 }
+.payment-methods-image, .shipping-methods-image {
+  max-width: 100%;
+  height: auto;
+  width: 280px;
+  object-fit: contain;
+}
 .footer-payment-desc {
   font-size: 0.97rem;
   color: #444;
@@ -147,152 +153,346 @@
     left: 0;
     width: 100%;
   }
+  
+  /* Footer Top - Besser organisiert für Mobile */
   .footer-top {
     flex-direction: column;
-    gap: 24px;
-    padding: 24px 20px 16px 20px;
+    gap: 32px;
+    padding: 32px 20px 24px 20px;
+    background: #f8f9fa;
   }
+  
   .footer-payment, .footer-shipping {
     min-width: 0;
     max-width: 100%;
     width: 100%;
+    background: #fff;
+    padding: 24px 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
+  
   .footer-payment-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #2565a6;
+    font-weight: 900;
   }
+  
+  .footer-payment-logos, .footer-shipping-logos {
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-payment-logos img, .footer-shipping-logos img {
+    height: 28px;
+    width: auto;
+  }
+
+  .payment-methods-image, .shipping-methods-image {
+    width: 240px;
+    max-width: 90vw;
+  }
+  
   .footer-payment-desc {
-    font-size: 0.95rem;
-  }
-  .footer-btn {
     font-size: 1rem;
-    padding: 7px 20px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    color: #555;
   }
+  
+  .footer-btn {
+    font-size: 0.95rem;
+    padding: 10px 24px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+  
+  /* Footer Main - Komplett überarbeitet für Mobile */
   .footer-main {
     flex-direction: column;
-    gap: 24px;
-    padding: 24px 20px;
+    gap: 32px;
+    padding: 32px 20px;
     align-items: center;
     text-align: center;
   }
-  .footer-brand, .footer-social {
-    align-items: center;
-  }
-  .footer-logo {
-    height: 48px;
-  }
-  .footer-contact {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-  .footer-links {
-    flex-direction: column;
-    gap: 20px;
+  
+  .footer-brand {
     align-items: center;
     width: 100%;
+    margin-bottom: 8px;
   }
-  .footer-links > div {
-    align-items: center;
+  
+  .footer-logo {
+    height: 60px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .footer-contact {
+    font-size: 1rem;
     text-align: center;
+    line-height: 1.2;
+    color: #e8f4ff;
   }
+  
+  .footer-contact > div {
+    margin-bottom: 3px;
+  }
+  
+  /* Links besser organisiert */
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+    align-items: start;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .footer-links > div {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
   .footer-link-title {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 800;
   }
+  
   .footer-links a {
     font-size: 0.95rem;
+    margin-bottom: 4px;
+    display: block;
   }
+  
+  /* Social Media besser positioniert */
+  .footer-social {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .footer-social img {
+    height: 32px;
+    width: 32px;
+  }
+  
+  /* Footer Bottom verbessert */
   .footer-bottom {
-    padding: 10px 20px;
+    padding: 20px 20px;
     font-size: 0.9rem;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    text-align: center;
+    line-height: 1.4;
   }
+  
   .footer-bottom a {
     font-size: 0.9rem;
+    margin: 0 4px;
   }
 }
 
 @media (max-width: 600px) {
   .footer-top {
-    padding: 20px 15px 12px 15px;
-    gap: 20px;
+    padding: 28px 15px 20px 15px;
+    gap: 24px;
   }
+  
+  .footer-payment, .footer-shipping {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  
   .footer-payment-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 14px;
   }
+  
+  .footer-payment-logos, .footer-shipping-logos {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .footer-payment-logos img, .footer-shipping-logos img {
+    height: 24px;
+  }
+
+  .payment-methods-image, .shipping-methods-image {
+    width: 200px;
+    max-width: 85vw;
+  }
+  
   .footer-payment-desc {
-    font-size: 0.9rem;
-  }
-  .footer-btn {
     font-size: 0.95rem;
-    padding: 6px 18px;
+    line-height: 1.2;
+    margin-bottom: 10px;
   }
-  .footer-main {
-    padding: 20px 15px;
-    gap: 20px;
-  }
-  .footer-logo {
-    height: 44px;
-  }
-  .footer-contact {
+  
+  .footer-btn {
     font-size: 0.9rem;
+    padding: 8px 20px;
+    border-radius: 18px;
   }
+  
+  .footer-main {
+    padding: 28px 15px;
+    gap: 28px;
+  }
+  
+  .footer-logo {
+    height: 56px;
+    margin-bottom: 16px;
+  }
+  
+  .footer-contact {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  
+  .footer-contact > div {
+    margin-bottom: 2px;
+  }
+  
   .footer-links {
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 20px;
+    max-width: 350px;
   }
+  
   .footer-link-title {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
   }
+  
   .footer-links a {
     font-size: 0.9rem;
+    margin-bottom: 3px;
   }
+  
+  .footer-social {
+    gap: 16px;
+    margin-top: 12px;
+  }
+  
+  .footer-social img {
+    height: 28px;
+    width: 28px;
+  }
+  
   .footer-bottom {
-    padding: 8px 15px;
+    padding: 16px 15px;
     font-size: 0.85rem;
+    gap: 10px;
   }
+  
   .footer-bottom a {
     font-size: 0.85rem;
+    margin: 0 2px;
   }
 }
 
 @media (max-width: 400px) {
   .footer-top {
-    padding: 16px 10px 10px 10px;
-    gap: 16px;
+    padding: 24px 10px 16px 10px;
+    gap: 20px;
   }
+  
+  .footer-payment, .footer-shipping {
+    padding: 18px 14px;
+    border-radius: 10px;
+  }
+  
   .footer-payment-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    margin-bottom: 12px;
   }
+  
+  .footer-payment-logos, .footer-shipping-logos {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-payment-logos img, .footer-shipping-logos img {
+    height: 22px;
+  }
+
+  .payment-methods-image, .shipping-methods-image {
+    width: 180px;
+    max-width: 80vw;
+  }
+  
   .footer-payment-desc {
-    font-size: 0.85rem;
-  }
-  .footer-btn {
     font-size: 0.9rem;
-    padding: 5px 16px;
+    margin-bottom: 8px;
+    line-height: 1.2;
   }
-  .footer-main {
-    padding: 16px 10px;
-    gap: 16px;
-  }
-  .footer-logo {
-    height: 40px;
-  }
-  .footer-contact {
+  
+  .footer-btn {
     font-size: 0.85rem;
+    padding: 7px 18px;
+    border-radius: 16px;
   }
+  
+  .footer-main {
+    padding: 24px 10px;
+    gap: 24px;
+  }
+  
+  .footer-logo {
+    height: 50px;
+    margin-bottom: 14px;
+  }
+  
+  .footer-contact {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  
+  .footer-contact > div {
+    margin-bottom: 2px;
+  }
+  
   .footer-links {
-    gap: 14px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 16px;
+    max-width: 300px;
   }
+  
   .footer-link-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
+  
   .footer-links a {
     font-size: 0.85rem;
+    margin-bottom: 2px;
   }
+  
+  .footer-social {
+    gap: 14px;
+    margin-top: 10px;
+  }
+  
+  .footer-social img {
+    height: 26px;
+    width: 26px;
+  }
+  
   .footer-bottom {
-    padding: 6px 10px;
+    padding: 14px 10px;
     font-size: 0.8rem;
+    gap: 8px;
   }
+  
   .footer-bottom a {
     font-size: 0.8rem;
+    margin: 0 1px;
   }
 }

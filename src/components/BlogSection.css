@@ -19,18 +19,27 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 20px;
+}
+
+/* Hide arrows on desktop */
+.scroll-arrow {
+  display: none;
+}
+
+.scroll-indicators {
+  display: none;
 }
 
 .blog-list {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
   padding: 20px 0;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .blog-list::-webkit-scrollbar {
@@ -42,8 +51,9 @@
   border-radius: 18px;
   box-shadow: 0 4px 18px #e4e4e4;
   padding: 0 0 18px 0;
-  width: 200px;
-  flex-shrink: 0;
+  width: 300px;
+  flex: 1;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,22 +155,48 @@
   .blog-container {
     padding: 0 60px;
   }
+
+  /* Show arrows and indicators on mobile */
+  .scroll-arrow {
+    display: flex !important;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-indicators {
+    display: flex !important;
+  }
+
+  /* Enable carousel on mobile */
+  .blog-list {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+  }
+
+  .blog-list::-webkit-scrollbar {
+    display: none;
+  }
   
   .blog-card {
-    width: 180px;
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+    flex: none;
+    scroll-snap-align: center;
   }
   
   .blog-img {
-    height: 100px;
+    height: 140px;
   }
   
   .blog-label {
-    font-size: 0.9rem;
-  }
-  
-  .scroll-arrow {
-    width: 40px;
-    height: 40px;
+    font-size: 0.95rem;
   }
   
   .scroll-arrow svg {

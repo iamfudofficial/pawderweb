@@ -1,0 +1,87 @@
+/* Globale Mobile-Optimierungen */
+
+@media (max-width: 900px) {
+  html, body, .App {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Einheitliche Abstände */
+  section, .story-hero-section, .story-problem-section, .story-transformation-section,
+  .story-solution-section, .story-socialproof-section, .story-cta-section,
+  .blog-section, .pawder-interactive-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Karten & Bilder responsiv */
+  img { max-width: 100%; height: auto; display: block; }
+  .card, .blog-card, .pawder-interactive-card, .shop-card, .product-card-green {
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  /* Buttons als Tap-Targets */
+  .pawder-hero-btn, .shop-card-btn, .product-btn-green, .story-cta-btn, .amazon-btn, .ebay-btn,
+  .navbar-shop-btn, .navbar-cart-btn, .floating-cta-button {
+    min-height: 44px;
+    padding: 12px 18px;
+    border-radius: 24px;
+  }
+
+  /* Grids auf 1 Spalte */
+  .shop-grid, .products-list, .pawder-interactive-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .shop-card-img { width: 100%; height: auto; object-fit: cover; }
+
+  /* Horizontaler Content: weiches Scrolling + Snap */
+  [data-snap-list] {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  [data-snap-card] { scroll-snap-align: start; scroll-snap-stop: always; }
+
+  /* Pfeile nicht überdecken */
+  .scroll-arrow { z-index: 6 !important; }
+
+  /* Inline-Pfeile in StoryCards/Blog per Aria selektieren und aufgeräumt ausblenden */
+  button[aria-label="Nach links scrollen"],
+  button[aria-label="Nach rechts scrollen"] {
+    display: none !important;
+  }
+
+  /* Hero vereinfachen */
+  .pawder-hero-banner::before,
+  .pawder-hero-banner::after { display: none !important; }
+  .meatbar-big,
+  .pawder-hero-toptext,
+  .pawder-hero-power { text-shadow: none !important; }
+  .meatbar-big { font-size: 2rem !important; line-height: 1.2 !important; }
+
+  /* Saubere Headings & Spacing */
+  h1, h2, h3 { margin-top: 0.2rem; margin-bottom: 0.8rem; }
+  p { margin-top: 0; margin-bottom: 0.8rem; }
+  .shop-title, .blog-title { margin-bottom: 1rem !important; }
+
+  /* Buttons vollbreit in Cards */
+  .shop-card-btn, .product-btn-green, .amazon-btn, .ebay-btn {
+    width: 100%;
+  }
+
+  /* Story/Blog Cards Padding optimieren */
+  .blog-card { width: 80vw; max-width: 320px; }
+}
+
+@media (max-width: 600px) {
+  .blog-title, .story-cta-title, .story-problem-title, .story-solution-title, .story-transformation-title {
+    letter-spacing: .2px;
+  }
+}
+
+

@@ -8,10 +8,7 @@ const Footer = () => (
       <div className="footer-payment">
         <div className="footer-payment-title">Sichere Bezahlmethoden</div>
         <div className="footer-payment-logos">
-          <img src="/footer/paypal.svg" alt="PayPal" />
-          <img src="/footer/klarna.svg" alt="Klarna" />
-          <img src="/footer/visa.svg" alt="Visa" />
-          <img src="/footer/applepay.svg" alt="Apple Pay" />
+          <img src="/zahlungsmethoden/zahlungsmethoden_sicher-bezahlen_957x292.png" alt="Sichere Bezahlmethoden" className="payment-methods-image" />
         </div>
         <div className="footer-payment-desc">Einfache und sichere Zahlung<br />SSL-Verschlüsselung &amp; Käuferschutz</div>
         <a className="footer-btn" href="#">MEHR ZUM THEMA</a>
@@ -19,8 +16,7 @@ const Footer = () => (
       <div className="footer-shipping">
         <div className="footer-payment-title">Europaweite Lieferung</div>
         <div className="footer-shipping-logos">
-          <img src="/footer/dhl.svg" alt="DHL" />
-          <img src="/footer/dpd.svg" alt="DPD" />
+          <img src="/versand/gopure_kratom_free_shipping_to_europe_and_UK.png" alt="Europaweite Lieferung" className="shipping-methods-image" />
         </div>
         <div className="footer-payment-desc">Versandkostenfrei ab 50 €<br />Schnelle Lieferung</div>
         <Link className="footer-btn" to="/shipping">INFOS ZUM VERSAND</Link>

@@ -7,7 +7,7 @@ import FullWidthImage from './components/FullWidthImage';
 import BestsellerSection from './components/BestsellerSection';
 import BlogSection from './components/BlogSection';
 import BrandVideoSection from './components/BrandVideoSection';
-import NewsletterSection from './components/NewsletterSection';
+
 import SocialSection from './components/SocialSection';
 import Footer from './components/Footer';
 import BlogLaeufigkeit from './components/Blog_Laeufigkeit';
@@ -18,7 +18,9 @@ import Story from './components/Story';
 import StoryCards from './components/StoryCards';
 import Quality from './components/Quality';
 import AnimatedIcons from './components/AnimatedIcons';
-import FloatingCTA from './components/FloatingCTA';
+import DrPawTestimonial from './components/DrPawTestimonial';
+import HeroCarousel from './components/HeroCarousel';
+
 import Shipping from './components/Shipping';
 import PawChat from './components/PawChat';
 import ProductDetail from './components/ProductDetail';
@@ -27,6 +29,9 @@ import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 import Impressum from './components/Impressum';
 import './App.css';
+import './mobile.css';
+import './premium-mobile.css';
+import PasswordGate from './components/PasswordGate';
 
 function MainContent() {
   return (
@@ -34,19 +39,7 @@ function MainContent() {
       <HeaderBar />
       <Navbar />
       {/* 1. Hero Section */}
-      <section className="pawder-hero-banner">
-        <div className="pawder-hero-left">
-          <div className="pawder-hero-toptext">Shake it. Sprinkle it. Wag it.</div>
-          <div className="meatbar-big" style={{margin: 0}}>Pawder – Das Gewürz für glückliche Hunde</div>
-          <a href="#products" className="pawder-hero-btn">JETZT VORBESTELLEN</a>
-        </div>
-        <div className="pawder-hero-right">
-          <div className="pawder-hero-product-image">
-            <img src="/untershopbild/082e7ab3-8861-4adf-90e2-7aa6966ee556_removalai_preview.png" alt="Pawder Produkt" className="hero-product-main" />
-          </div>
-          <div className="pawder-hero-new">NEU</div>
-        </div>
-      </section>
+      <HeroCarousel />
       {/* Animated Icons */}
       <AnimatedIcons />
       {/* 2. Problem Section */}
@@ -54,6 +47,7 @@ function MainContent() {
         <div className="story-problem-inner">
           <h2 className="story-problem-title">Futterfrust & Sorgen</h2>
           <div className="story-problem-text">Viele Hunde sind wählerisch. Als Hundebesitzer willst du nur das Beste – aber oft bleibt das Futter stehen. Du fragst dich: Bekommt mein Hund genug Nährstoffe? Ist er glücklich?</div>
+          <img src="/3schritte/hund-frisst-nicht-mehr-8-ursachen-und-tipps-zur-hi-17464537194461.jpeg.avif" alt="Hund frisst nicht" className="story-problem-img" />
         </div>
       </section>
       {/* 3. Transformation Section */}
@@ -61,7 +55,7 @@ function MainContent() {
         <div className="story-transformation-inner">
           <h2 className="story-transformation-title">Aus Futter wird ein Erlebnis</h2>
           <div className="story-transformation-text">Einfach drüberstreuen – und schon wird aus jedem Futter ein Festmahl. Selbst mäkelige Hunde lieben Pawder!</div>
-          <img src="/demo/hundfrisst.png" alt="Hund frisst begeistert" className="story-transformation-img" />
+          <img src="/3schritte/machtpawderdrüber.png" alt="Hund frisst begeistert" className="story-transformation-img" />
         </div>
       </section>
       {/* 4. Lösung Section */}
@@ -69,18 +63,19 @@ function MainContent() {
         <div className="story-solution-inner">
           <h2 className="story-solution-title">Die Lösung: Pawder</h2>
           <div className="story-solution-text">Genau deshalb gibt es Pawder: Das erste Gewürz, das nicht nur schmeckt, sondern auch gezielt unterstützt – für Fell, Knochen, Magen & mehr. Entwickelt mit Tierärzten, 100% natürlich.</div>
-          <img src="/demo/pawderdose.png" alt="Pawder Dose" className="story-solution-img" />
+          <img src="/3schritte/hundfrisst.png" alt="Hund frisst begeistert" className="story-solution-img" />
         </div>
       </section>
       {/* 5. Sorten-Showcase */}
       <ProductShowcase />
-      {/* 6. Story Cards Section */}
+      {/* 6. Dr. PAW Testimonial - Psychologisch überzeugend */}
+      <DrPawTestimonial />
+      {/* 7. Story Cards Section */}
       <StoryCards />
       <FullWidthImage src="/untershopbild/Screenshot 2025-04-27 115738.png" alt="Premiumqualität nach dem Rezept der Natur" />
       <BestsellerSection />
       <BrandVideoSection />
       <BlogSection />
-      <NewsletterSection />
       <SocialSection />
       {/* 7. Social Proof Section */}
       <section className="story-socialproof-section">
@@ -97,7 +92,6 @@ function MainContent() {
         </div>
       </section>
       <Footer />
-      <FloatingCTA />
       <PawChat />
     </div>
   );
@@ -105,23 +99,25 @@ function MainContent() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MainContent />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/story" element={<Story />} />
-        <Route path="/quality" element={<Quality />} />
-        <Route path="/shipping" element={<Shipping />} />
-        <Route path="/blog/laeufigkeit" element={<BlogLaeufigkeit />} />
-        <Route path="/blog/wandern" element={<BlogWandern />} />
-        <Route path="/blog/zecken" element={<BlogZecken />} />
-        <Route path="/product/:productId" element={<ProductDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/impressum" element={<Impressum />} />
-      </Routes>
-    </Router>
+    <PasswordGate>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/story" element={<Story />} />
+          <Route path="/quality" element={<Quality />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/blog/laeufigkeit" element={<BlogLaeufigkeit />} />
+          <Route path="/blog/wandern" element={<BlogWandern />} />
+          <Route path="/blog/zecken" element={<BlogZecken />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/impressum" element={<Impressum />} />
+        </Routes>
+      </Router>
+    </PasswordGate>
   );
 }
 

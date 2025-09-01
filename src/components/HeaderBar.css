@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  height: 78px;
+  height: 92px;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -45,8 +45,8 @@
 }
 
 .headerbar-logo {
-  height: 62px;
-  max-width: 210px;
+  height: 80px;
+  max-width: 280px;
   object-fit: contain;
   display: block;
 }

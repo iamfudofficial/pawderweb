@@ -1,5 +1,6 @@
 import React from 'react';
-import { getStripe } from '../stripeConfig';
+import { ensureStripe } from '../stripe';
+import { functionUrl } from '../utils/netlify';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
 
@@ -117,15 +118,9 @@ const ProductDetail = () => {
   }
 
   const handleCheckout = async () => {
-    let stripe;
-    try {
-      stripe = await getStripe();
-    } catch (e) {
-      alert(e.message);
-      return;
-    }
+    const stripe = await ensureStripe();
     const cents = Math.round(parseFloat((product.price || '0').replace(/[^0-9,\.]/g, '').replace(',', '.')) * 100);
-    const res = await fetch('/.netlify/functions/create-checkout-session', {
+    const res = await fetch(functionUrl('create-checkout-session'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -140,6 +135,12 @@ const ProductDetail = () => {
         ],
       }),
     });
+    if (!res.ok) {
+      const txt = await res.text();
+      console.error('Checkout-Fehler:', txt);
+      alert('Kauf konnte nicht gestartet werden: ' + (txt || res.status));
+      return;
+    }
     const data = await res.json();
     if (data.url) {
       window.location.href = data.url;

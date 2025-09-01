@@ -1,146 +1,271 @@
+/* PRODUCT SHOWCASE GREEN SECTION */
 .product-showcase-green {
-  width: 100%;
-  background: #b7e000;
-  padding: 64px 0 56px 0;
-  box-sizing: border-box;
+  background: linear-gradient(135deg, #2565a6 0%, #1e4a8a 100%);
+  padding: 48px 20px 32px 20px;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
-.trustpilot-bar {
-  width: fit-content;
-  min-width: 320px;
-  max-width: 95vw;
-  margin: 38px auto 0 auto;
-  background: #ffb97e;
-  color: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  font-size: 1.06rem;
-  font-weight: 700;
-  border-radius: 16px;
-  padding: 9px 28px 9px 28px;
-  box-shadow: 0 2px 12px #e4e4e4;
-  z-index: 3;
+
+.product-showcase-green::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2565a6 0%, #1e4a8a 100%);
+  opacity: 0.1;
+  z-index: 1;
 }
-.trustpilot-label {
-  font-weight: 900;
-  margin-right: 10px;
-}
-.trustpilot-stars {
-  height: 22px;
-  margin-right: 8px;
-}
-.trustpilot-reviews {
-  margin-right: 8px;
-  font-size: 1.04rem;
-}
-.trustpilot-logo {
-  height: 22px;
-}
-.product-showcase-list {
-  width: 100%;
+
+.product-showcase-container {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.product-showcase-title {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.product-showcase-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* PREMIUM PRODUCT CAROUSEL */
+.product-showcase-list.premium-product-carousel {
   display: flex;
+  flex-direction: row;
+  gap: 30px;
   justify-content: center;
   align-items: stretch;
-  gap: 44px;
-  margin: 0 auto 0 auto;
-  z-index: 2;
+  overflow: visible;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
 }
-.product-card-green {
-  background: #fff;
-  border-radius: 22px;
-  box-shadow: 0 8px 32px 0 #d1e5a1;
-  padding: 38px 38px 34px 38px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 260px;
-  max-width: 340px;
-  transition: box-shadow 0.17s, transform 0.17s;
+
+.product-card-green.premium-product-card {
+  width: 300px;
+  flex: 1;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 28px 24px 24px 24px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
-  cursor: pointer;
   z-index: 10003;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  /* Mobile Touch Optimierung */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-appearance: none;
-  appearance: none;
-  pointer-events: auto;
 }
-.product-card-green:hover {
-  box-shadow: 0 12px 44px 0 #b7e00055;
-  transform: translateY(-5px) scale(1.025);
+
+.product-card-green.premium-product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(183, 224, 0, 0.3);
+  background: rgba(255, 255, 255, 1);
 }
+
 .product-img-green {
   width: 200px;
   max-width: 100%;
-  height: auto;
-  margin-bottom: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 22px #c7e0a0;
-  background: #f8f8f8;
-  object-fit: contain;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
-.product-btn-green {
-  margin-top: 16px;
-  padding: 15px 34px;
-  border: none;
-  border-radius: 24px;
-  color: #fff;
-  background: #b7e000;
-  font-size: 1.13rem;
+
+.product-title-green {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2565a6;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.product-desc-green {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.product-price-green {
+  font-size: 1.3rem;
   font-weight: 900;
-  letter-spacing: 1px;
+  color: #b7e000;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.product-btn-green {
+  background: linear-gradient(135deg, #b7e000 0%, #9bcc00 100%);
+  color: #2565a6;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 12px #b7e00033;
-  transition: background 0.16s, color 0.16s, box-shadow 0.16s;
-  text-transform: uppercase;
-  z-index: 10004;
-  position: relative;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(183, 224, 0, 0.3);
   pointer-events: auto;
-  /* Mobile Touch Optimierung */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-appearance: none;
-  appearance: none;
+  width: 100%;
+  margin-top: 8px;
 }
+
 .product-btn-green:hover {
-  background: #d0ff46;
-  color: #222;
-  box-shadow: 0 4px 18px #b7e00099;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(183, 224, 0, 4);
+  background: linear-gradient(135deg, #c8f000 0%, #a8e000 100%);
 }
+
+.product-btn-green:active {
+  transform: translateY(0);
+}
+
+.loading-message, .no-products-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Trustpilot Bar */
+.trustpilot-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  margin: 32px auto 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  min-width: 300px;
+}
+
+.trustpilot-stars {
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.trustpilot-logo {
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 900px) {
   .product-showcase-green {
-    padding: 40px 20px 32px 20px;
-    margin-left: 0;
-    left: 0;
+    padding: 40px 15px 28px 15px;
+  }
+
+  .product-showcase-container {
+    padding: 0;
+    margin: 0;
+    overflow: visible;
     width: 100%;
   }
-  .product-showcase-list {
-    flex-direction: column;
+
+  .product-showcase-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .product-showcase-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
+
+  /* Navigation Arrows für Mobile */
+  .product-scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(183, 224, 0, 0.9);
+    border: none;
+    border-radius: 50%;
+    color: #2565a6;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10004;
+    display: flex !important;
     align-items: center;
-    gap: 24px;
-    max-width: 100%;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
-  .product-card-green {
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
+
+  .product-scroll-arrow:hover {
+    background: rgba(208, 255, 70, 0.95) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+    box-shadow: 0 12px 40px rgba(208, 255, 70, 0.4) !important;
+  }
+
+  .product-scroll-arrow.left {
+    left: -5px !important;
+  }
+
+  .product-scroll-arrow.right {
+    right: -5px !important;
+  }
+
+  /* PREMIUM HORIZONTAL CAROUSEL */
+  .product-showcase-list.premium-product-carousel {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-showcase-list.premium-product-carousel::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .product-card-green.premium-product-card {
+    min-width: 280px !important;
+    width: 280px !important;
+    max-width: 280px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start !important;
     padding: 24px 20px 20px 20px;
     z-index: 10003;
     -webkit-tap-highlight-color: transparent;
@@ -153,6 +278,17 @@
     -webkit-touch-callout: none;
     -webkit-appearance: none;
     appearance: none;
+    /* Premium Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  }
+
+  .product-card-green.premium-product-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 20px 60px rgba(183, 224, 0, 0.3) !important;
+    background: rgba(255, 255, 255, 1) !important;
   }
   .product-img-green {
     width: 180px;
@@ -191,22 +327,41 @@
   .product-showcase-green {
     padding: 32px 15px 24px 15px;
   }
-  .product-showcase-list {
-    gap: 20px;
+
+  .product-showcase-container {
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    width: 100%;
   }
-  .product-card-green {
+
+  .product-scroll-arrow {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 18px !important;
+  }
+
+  .product-scroll-arrow.left {
+    left: -2px !important;
+  }
+
+  .product-scroll-arrow.right {
+    right: -2px !important;
+  }
+
+  .product-showcase-list.premium-product-carousel {
+    gap: 16px !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-card-green.premium-product-card {
+    min-width: 260px !important;
+    width: 260px !important;
+    max-width: 260px !important;
     padding: 20px 15px 16px 15px;
-    z-index: 10003;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    /* Mobile Touch Optimierung */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-appearance: none;
-    appearance: none;
   }
   .product-img-green {
     width: 160px;
@@ -244,22 +399,41 @@
   .product-showcase-green {
     padding: 24px 10px 20px 10px;
   }
-  .product-showcase-list {
-    gap: 16px;
+
+  .product-showcase-container {
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    width: 100%;
   }
-  .product-card-green {
+
+  .product-scroll-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 16px !important;
+  }
+
+  .product-scroll-arrow.left {
+    left: 0 !important;
+  }
+
+  .product-scroll-arrow.right {
+    right: 0 !important;
+  }
+
+  .product-showcase-list.premium-product-carousel {
+    gap: 12px !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-card-green.premium-product-card {
+    min-width: 240px !important;
+    width: 240px !important;
+    max-width: 240px !important;
     padding: 16px 12px 12px 12px;
-    z-index: 10003;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    /* Mobile Touch Optimierung */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-appearance: none;
-    appearance: none;
   }
   .product-img-green {
     width: 140px;
@@ -281,7 +455,7 @@
   .trustpilot-bar {
     padding: 6px 12px;
     font-size: 0.85rem;
-    margin: 16px auto 0 auto;
+    margin: 18px auto 0 auto;
     gap: 5px;
     min-width: 240px;
   }

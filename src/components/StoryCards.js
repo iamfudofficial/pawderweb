@@ -6,21 +6,18 @@ const storyCards = [
     title: 'Die Pawder Geschichte',
     subtitle: 'Wie alles begann',
     image: '/demo/pawder-founder.jpg',
-    icon: '▶️',
     link: '/story'
   },
   {
     title: 'Die Pawder Qualität',
     subtitle: '100% natürlich & nachhaltig',
-    image: '/demo/pawder-ingredients.jpg',
-    icon: '🔍',
+    image: '/entdeckepawder/unnamed (1).png',
     link: '/quality'
   },
   {
     title: 'Der Pawder Shop',
     subtitle: 'Finde das richtige Pawder für deinen Hund',
-    image: '/demo/pawder-products.jpg',
-    icon: '🛍️',
+    image: '/entdeckepawder/pawdershop.png',
     link: '/shop'
   }
 ];
@@ -96,7 +93,10 @@ const StoryCards = () => {
     scrollBehavior: 'smooth',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
-    padding: '20px 0'
+    padding: '20px 0',
+    WebkitOverflowScrolling: 'touch',
+    overscrollBehaviorX: 'contain',
+    scrollSnapType: 'x mandatory'
   };
 
   const cardStyle = {
@@ -112,7 +112,9 @@ const StoryCards = () => {
     flexDirection: 'column',
     textDecoration: 'none',
     transition: 'box-shadow 0.18s, transform 0.18s',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    scrollSnapAlign: 'start',
+    scrollSnapStop: 'always'
   };
 
   const arrowStyle = {
@@ -187,15 +189,15 @@ const StoryCards = () => {
         </button>
 
         {/* Scroll Container */}
-        <div style={{
+          <div style={{
           width: '100%',
           maxWidth: '1200px',
           margin: '0 auto',
           padding: '0 80px'
-        }}>
-          <div style={listStyle} ref={scrollRef}>
+          }}>
+          <div style={listStyle} ref={scrollRef} data-snap-list>
             {storyCards.map((card, idx) => (
-              <Link style={cardStyle} to={card.link} key={idx}>
+              <Link style={cardStyle} to={card.link} key={idx} data-snap-card>
                 <div style={{
                   position: 'relative',
                   width: '100%',
@@ -217,17 +219,11 @@ const StoryCards = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: 'rgba(0, 0, 0, 0.3)',
+                    background: 'rgba(0, 0, 0, 0.2)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    <div style={{
-                      fontSize: '2rem',
-                      color: '#fff'
-                    }}>
-                      {card.icon}
-                    </div>
                   </div>
                 </div>
                 <div style={{

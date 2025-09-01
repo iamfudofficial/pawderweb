@@ -114,6 +114,7 @@
   transition: all 0.3s ease;
   transform-origin: center;
   pointer-events: none;
+  margin: 2px 0;
 }
 
 .hamburger-line.open:nth-child(1) {
@@ -191,8 +192,8 @@
 /* Mobile Styles */
 @media (max-width: 900px) {
   .navbar {
-    display: flex; /* Mobile sichtbar */
-    padding: 0 15px;
+    display: flex !important; /* Mobile sichtbar */
+    padding: 0 20px;
     height: 60px;
     background: #2565a6;
     position: fixed;
@@ -201,6 +202,8 @@
     right: 0;
     z-index: 9999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: space-between;
     /* Mobile Touch Fix */
     pointer-events: auto !important;
   }
@@ -212,6 +215,9 @@
   .navbar-logo {
     flex: 1;
     z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .pawder-logo-img {
@@ -225,8 +231,20 @@
   }
   
   .hamburger-menu {
-    display: flex;
-    z-index: 10001;
+    display: flex !important;
+    z-index: 10001 !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 24px !important;
+    height: 18px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
   }
   
   .navbar-links {
@@ -290,6 +308,17 @@
   .pawder-logo-img {
     height: 45px;
     max-width: 100px;
+  }
+  
+  .hamburger-menu {
+    width: 22px !important;
+    height: 16px !important;
+    right: 12px !important;
+  }
+  
+  .hamburger-line {
+    margin: 1px 0;
+    height: 2px;
   }
   
   .navbar-links {
